@@ -9,8 +9,14 @@
 
 // }
 
+function continueGame() {
+    // 1st step : generate a random alphabet
+    const alphabet = getARandomAlphabet();
+}
+
 function play() {
     hideElementById('home-screen');
     showElementById('play-ground');
+    continueGame('')
 }
 
