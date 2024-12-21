@@ -103,3 +103,7 @@ function gameOver() {
     removeBackgroundColorById(currentAlphabet)
 }
 
+
+
+// module 28-8 deploy netlify
+// module 28-9 module summary
