@@ -13,6 +13,11 @@ function handleKeyboardKeyupButton(event) {
     const playerPressed = event.key;
     console.log('player pressed', playerPressed)
 
+    //stop the game if pressed ''
+    if (playerPressed === 'Escape') {
+        gameOver();
+    }
+
     // get the expected to press
     const currentAlphabetElement = document.getElementById('current-alphabet')
     const currentAlphabet = currentAlphabetElement.innerText;
@@ -89,6 +94,12 @@ function play() {
 function gameOver() {
     hideElementById('play-ground');
     showElementById('final-score');
+    //update final score
+    const lastScore = getElementValueById('current-score')
+    setTextElementValueById('last-score', lastScore)
 
+    //clear the last selected alphabet
+    const currentAlphabet = getElementTextById('current-alphabet')
+    removeBackgroundColorById(currentAlphabet)
 }
 
