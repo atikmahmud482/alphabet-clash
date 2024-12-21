@@ -8,6 +8,11 @@
 //     // console.log(playGroundSection.classList)
 
 // }
+function handleKeyboardButtonPress() {
+    // console.log('button press')
+}
+// capture keyboard key press
+document.addEventListener('keyup', handleKeyboardButtonPress)
 
 function continueGame() {
     // 1st step : generate a random alphabet
