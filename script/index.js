@@ -8,11 +8,27 @@
 //     // console.log(playGroundSection.classList)
 
 // }
-function handleKeyboardButtonPress() {
+function handleKeyboardKeyupButton(event) {
     // console.log('button press')
+    const playerPressed = event.key;
+    console.log('player pressed', playerPressed)
+
+    // get the expected to press
+    const currentAlphabetElement = document.getElementById('current-alphabet')
+    const currentAlphabet = currentAlphabetElement.innerText;
+    const expectedAlphabet = currentAlphabet.toLowerCase();
+
+    // check matched or not
+    if (playerPressed === expectedAlphabet) {
+        console.log('You get a point');
+    }
+    else {
+        console.log('You missed. You lost a life');
+    }
+
 }
 // capture keyboard key press
-document.addEventListener('keyup', handleKeyboardButtonPress)
+document.addEventListener('keyup', handleKeyboardKeyupButton)
 
 function continueGame() {
     // 1st step : generate a random alphabet
