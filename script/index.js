@@ -20,12 +20,25 @@ function handleKeyboardKeyupButton(event) {
 
     // check matched or not
     if (playerPressed === expectedAlphabet) {
-        console.log('You get a point');
+        // console.log('You get a point');
+        const currentScoreElement = document.getElementById('current-score')
+        const currentScoreText = currentScoreElement.innerText;
+        const currentScore = parseInt(currentScoreText)
+
+        const newScore = currentScore + 1;
+        currentScoreElement.innerText = newScore;
+
         removeBackgroundColorById(expectedAlphabet)
         continueGame();
     }
     else {
-        console.log('You missed. You lost a life');
+        // console.log('You missed. You lost a life');
+        const currentLifeElement = document.getElementById('current-life');
+        const currentLifeText = currentLifeElement.innerText;
+        const currentLife = parseInt(currentLifeText)
+
+        const newLife = currentLife - 1;
+        currentLifeElement.innerText = newLife;
     }
 
 }
